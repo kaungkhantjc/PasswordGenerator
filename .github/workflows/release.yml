@@ -1,0 +1,25 @@
+name: Build and Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Build Executable
+        shell: pwsh
+        run: |
+          $out = "PasswordGenerator_${{ github.ref_name }}.exe"
+          & "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe" /nologo /target:winexe /optimize+ /win32icon:app.ico /out:$out Program.cs
+
+      - name: Upload Release Asset
+        uses: softprops/action-gh-release@v3
+        with:
+          files: PasswordGenerator_${{ github.ref_name }}.exe
