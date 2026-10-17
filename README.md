@@ -13,7 +13,7 @@ A lightweight, minimal Windows 11 GUI application for generating cryptographical
 
 ## Download
 
-Download the latest standalone `.exe` (~12 KB) directly from the [**GitHub Releases**](../../releases/latest) page and run it, no installation required.
+Download the latest standalone `.exe` (~30 KB) directly from the [**GitHub Releases**](../../releases/latest) page and run it, no installation required.
 
 ## Build from Source
 
